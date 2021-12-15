@@ -3,32 +3,34 @@
 
 namespace snl {
     template<class T>
-    T& stack<T>::peek<T>() {
+    T& stack<T>::peek() {
         return st.top();
     }
 
     template<class T>
-    T stack<T>::top() {
+    T& stack<T>::top() {
         return peek();
     }
 
     template<class T>
-    T pop() {
+    T stack<T>::pop() {
         T obj = st.top();
         st.pop();
         return obj;
     }
 
-    bool isEmpty() {
+    template<class T>
+    bool stack<T>::isEmpty() {
         return st.empty();
     }
 
-    bool empty() {
+    template<class T>
+    bool stack<T>::empty() {
         return isEmpty();
     }
 
     template<class T>
-    void push(T& object) {
+    void stack<T>::push(T& object) {
         st.push(object);
     }
 }

@@ -8,20 +8,16 @@ namespace snl {
     template<class T>
     class stack {
         public:
-        template<class T>
         T& peek();
 
-        template<class T>
-        T top();
+        T& top();
 
-        template<class T>
         T pop();
 
         bool isEmpty();
 
         bool empty();
 
-        template<class T>
         void push(T& object);
 
         private:
