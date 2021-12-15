@@ -1,21 +1,29 @@
 FILE_NAME=test.out
-COMPILE_FLAGS=-c
+COMPILER=clang++
+BUILD_FLAGS=-std=c++11 -Wall -Wextra -Wno-sign-compare
+DEBUG_FLAGS=-g -c $(BUILD_FLAGS)
+CPPS=test.cpp
 OBJECTS=test.o
+# NDEBUG flag?
 
 $(FILE_NAME): test.o
-	g++ test.o -o $(FILE_NAME)
+	$(COMPILER) test.o -o $(FILE_NAME)
 
 test.o: test.cpp
-	g++ $(COMPILE_FLAGS) test.cpp
+	$(COMPILER) $(DEBUG_FLAGS) test.cpp
 
 run:
 	./$(FILE_NAME)
 
+build:
+	$(COMPILER) $(BUILD_FLAGS) -o $(FILE_NAME) $(CPPS)
+
 debug:
-	COMPILE_FLAGS="-c -g"
-	$(call $(OBJECTS))
+	make
 	gdb ./$(FILE_NAME)
 	valgrind -s --leak-check=full ./$(FILE_NAME)
+
+.PHONY: clean
 
 clean:
 	rm *.o *.out
