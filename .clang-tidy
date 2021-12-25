@@ -1,0 +1,30 @@
+Checks: '*,-android*,-boost*,-fuchsia*,-objc*,-llvmlibc*,-cppcoreguidelines-pro-bounds-array-to-pointer-decay,-hicpp-no-array-decay,-modernize-use-trailing-return-type,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers'
+
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+
+AnalyzeTemporaryDtors: false
+FormatStyle:     none
+
+CheckOptions:
+# Disabled checks:
+# -android*
+#  disables android-specific checks
+# -boost*
+#  disables boot-specific checks
+# -fuchsia*
+#  disables fuchsia-specific checks
+# -objc*
+#  disables objective-c checks
+# -llvmlibc*
+#  disables checks specific to llvm-libc development
+# -cppcoreguidelines-pro-bounds-array-to-pointer-decay
+#  disabled for time being for assert statements
+# -hicpp-no-array-decay
+#  same as above
+# -modernize-use-trailing-return-type
+#  disabled because it seems silly to use for basic functions
+# -readability-magic-numbers
+#  often use magic numbers in testing
+# -cppcoreguidelines-avoid-magic-numbers
+#  same as above
