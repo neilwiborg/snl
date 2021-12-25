@@ -1,7 +1,7 @@
 FILE_NAME=test.out
 COMPILER=clang++
 BUILD_FLAGS=-std=c++11 -Wall -Wextra -Wno-sign-compare
-DEBUG_FLAGS=-g -c $(BUILD_FLAGS)
+DEBUG_FLAGS=-O0 -g -c $(BUILD_FLAGS)
 CPPS=$(TEST_DIR)/test.cpp
 OBJECTS=test.o
 TEST_DIR=./test
