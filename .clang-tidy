@@ -1,6 +1,6 @@
-Checks: '*,-android*,-boost*,-fuchsia*,-objc*,-llvmlibc*,-cppcoreguidelines-pro-bounds-array-to-pointer-decay,-hicpp-no-array-decay,-modernize-use-trailing-return-type,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers'
+Checks: '*,-android*,-boost*,-fuchsia*,-objc*,-llvmlibc*,-cppcoreguidelines-pro-bounds-array-to-pointer-decay,-hicpp-no-array-decay,-modernize-use-trailing-return-type,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers,-google-build-using-namespace,-google-global-names-in-headers,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-concurrency-mt-unsafe,-altera*,-llvm-header-guard,-cppcoreguidelines-owning-memory,-bugprone-easily-swappable-parameters'
 
-WarningsAsErrors: '*'
+WarningsAsErrors: '-*'
 HeaderFilterRegex: '.*'
 
 AnalyzeTemporaryDtors: false
@@ -28,3 +28,19 @@ CheckOptions:
 #  often use magic numbers in testing
 # -cppcoreguidelines-avoid-magic-numbers
 #  same as above
+# -google-build-using-namespace
+#  want to have using namespace directives
+# -google-global-names-in-headers
+#  want to have using namespace directives in header files
+# -cppcoreguidelines-pro-bounds-pointer-arithmetic
+#  want to use pointer arithmetic
+# -concurrency-mt-unsafe
+#  don't care about threads
+# -altera*
+#  disables OpenCL-specific checks
+# -llvm-header-guard
+#  want to use short header names
+# -cppcoreguidelines-owning-memory
+#  don't want to use smart pointers
+# -bugprone-easily-swappable-parameters
+#  want to have multiple parameters of the same type
