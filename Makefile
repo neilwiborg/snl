@@ -10,7 +10,7 @@ TEST_DIR=./test
 # NDEBUG flag?
 
 $(FILE_NAME): test.o
-	$(CXX) test.o -o $(FILE_NAME) test.o -o $(FILE_NAME)
+	$(CXX) test.o -o $(FILE_NAME)
 
 test.o: $(TEST_DIR)/test.cpp
 	$(CXX) $(DEBUG_FLAGS) $(TEST_DIR)/test.cpp
