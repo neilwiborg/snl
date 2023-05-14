@@ -45,10 +45,16 @@ namespace snl {
 
     template<class T>
     void selectionSort(std::vector<T> &collection) {
-        for (int i = 0; i < collection.size() - 1; i++) {
-            for (int j = 1; j < collection.size(); j++) {
-                // if ()
+        for (int i = 0; i < collection.size(); i++) {
+            int rightPointer = i;
+            for (int j = i; j < collection.size(); j++) {
+                if (collection[j] < collection[rightPointer]) {
+                    rightPointer = j;
+                }
             }
+            T temp = collection[i];
+            collection[i] = collection[rightPointer];
+            collection[rightPointer] = temp;
         }
     }
 }

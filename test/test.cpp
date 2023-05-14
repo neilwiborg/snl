@@ -10,5 +10,9 @@ int main() {
     printLine(nums);
     printLine(nums[binarySearch<int>(nums, 9)]);
 
+    std::vector<int> unsorted{7, 2, 4, 9, 0, 1, 4, 5};
+    selectionSort(unsorted);
+    printLine(unsorted);
+
     return 0;
 }
